@@ -37,11 +37,31 @@
     <input class = "RR" type="number" name="r" id="r"><br><br>
 
     <script>
+
+        
         function Sumar(){
             var a = document.getElementById("a").value;
             var b = document.getElementById("b").value;
             var r;
+
+
+            if(a == ""){
+                a = 0;
+            }
+            else{
+                a = parseInt(a);
+            }
+            if(b == ""){
+                b = 0;
+            }
+            else{
+                b = parseInt(b);
+            }
+
+
             r = a + b;
+
+
             document.getElementById("r").value = r
 
         }
