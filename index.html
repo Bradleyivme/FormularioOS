@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Operador de suma</title>
+    <style>
+        h1{
+            color: brown;
+        }
+        .AA{
+            background-color: burlywood;
+            color: black;
+        }
+        .BB{
+            background-color: burlywood;
+            color: black;
+        }
+        .RR{
+            background-color: burlywood;
+            color: black;
+        }
+    </style>
 </head>
 <body>
 <br><br><br><br><br>
@@ -17,7 +34,7 @@
 <p>Por lo tanto, hay un tercer cuadro en blando, que en el cual estará llegando el resultado operado.</p>
 <br><br>
 
-<p>Coloque los números que desea operar:</p>
+<p style="color: darkblue;">Coloque los números que desea operar:</p>
 
     <!-- Campo de captura de los valores enteros a operar -->
     <label for="a">Primer número:</label>
@@ -25,16 +42,46 @@
     <label for="b">Segundo número:</label>
     <input class = "BB" type="number" name="b" id="b"><br><br>
 
-<p>Por medio de este botón podrás operar los valores ingresados:</p>
+<p style="color: darkblue;">Por medio de este botón podrás operar los valores ingresados:</p>
     
     <!-- Botón que llama a la función Sumar -->
-    <button onclick="">Sumar</button><br><br>
+    <button onclick="Sumar()">Sumar</button><br><br>
 
-<p>Este es el resultado de la operación realizada:</p>
+<p style="color: darkblue;">Este es el resultado de la operación realizada:</p>
 
     <!-- Campo donde se muestra el resultado de la operación de dos varibales -->
     <label for="r">Resultado:</label>
     <input class = "RR" type="number" name="r" id="r"><br><br>
-    
+
+    <script>
+        // Los valores de los input son capturados y convertidos en variables
+        function Sumar(){
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var r;
+
+            // Verificación de las variables si son valores vacíos para convertirlos a 0
+            if(a == ""){
+                a = 0;
+            }
+            else{
+                a = parseInt(a);
+            }
+            if(b == ""){
+                b = 0;
+            }
+            else{
+                b = parseInt(b);
+            }
+
+            // Ejecución de la suma de las dos variables a operar
+            r = a + b;
+
+            // Se muestra el resultado de la operación en el navegador
+            document.getElementById("r").value = r
+
+        }
+    </script>
+    <br><br><br><br><br><br>
 </body>
 </html>
